@@ -13,36 +13,55 @@ const Container = styled.div`
 const Nav = styled.div`
   display: grid;
   grid-auto-flow: column;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 const Content = styled.div`
-  font-size: 50vw;
+  font-size: 8vw;
   text-align: center;
+  color: #c5e478;
 `;
 
-const PATHS = ['🤔', '😰', '🦄', '🍖', '🍕'];
+type Path = {
+  name: string;
+  path: string;
+};
+
+const PATHS: Path[] = [
+  {
+    name: 'Hello World',
+    path: '/hello-world',
+  },
+  {
+    name: 'About',
+    path: '/about',
+  },
+  {
+    name: 'Contact',
+    path: '/contact',
+  },
+];
 
 export const App = () => {
   return (
     <Container>
       <Nav>
-        {PATHS.map(s => (
-          <Link to={`/${s}`} key={s}>
-            <Button>{s}</Button>
+        {PATHS.map(({ name, path }) => (
+          <Link to={path} key={path}>
+            <Button>{name}</Button>
           </Link>
         ))}
       </Nav>
       <Content>
         <Switch>
-          {PATHS.map(s => (
-            <Route exact path={`/${s}`} key={s}>
-              {s.toUpperCase()}
+          {PATHS.map(({ name, path }) => (
+            <Route exact path={path} key={path}>
+              {name}
             </Route>
           ))}
         </Switch>
         <Route>
-          <Redirect to={`/${PATHS[0]}`} />
+          <Redirect to={PATHS[0].path} />
         </Route>
       </Content>
     </Container>

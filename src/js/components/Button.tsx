@@ -2,7 +2,8 @@ import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
 const ButtonEl = styled.button`
-  font-size: 3em;
+  text-transform: uppercase;
+  color: #c692e9;
 `;
 
 interface ButtonProps {
