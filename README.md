@@ -1,3 +1,3 @@
-## React Typescript Boilerplate
+## Vite React Typescript Boilerplate
 
-A simple boilerplate in typescript with react and react router.
+A simple Vite boilerplate in typescript with react and react router.

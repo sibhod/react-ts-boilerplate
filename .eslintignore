@@ -1,3 +1,2 @@
-/dist/**
-node_modules/
-**/*.test.{js,jsx,ts,tsx}
+/build
+vite.config.ts
